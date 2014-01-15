@@ -21,3 +21,11 @@ list:
 show:
     pattern: /works/{category}/show/{id_name}
     defaults: { _controller: AdrjBundle:Works:show }
+
+access:
+    pattern: /files
+    defaults: { _controller: AdrjBundle:Files:access }
+
+show:
+    pattern: /files/{token}
+    defaults: { _controller: AdrjBundle:Files:show }
