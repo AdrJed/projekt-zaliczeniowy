@@ -1,0 +1,7 @@
+parameters:
+#    adrj.example.class: Adrj\AdrjBundle\Example
+
+services:
+#    adrj.example:
+#        class: %adrj.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
