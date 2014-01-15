@@ -6,8 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('AdrjBundle:Default:index.html.twig', array('name' => $name));
+    // Akcja zrwacająca widok strony głównej
+        //return $this->render('AdrjBundle:Default:index.html.twig', array('name' => $name));
     }
 }

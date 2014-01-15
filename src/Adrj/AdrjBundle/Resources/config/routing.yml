@@ -1,3 +1,23 @@
 adrj_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: AdrjBundle:Default:index }
+
+blog:
+    pattern: /blog
+    defaults: { _controller: AdrjBundle:Blog:blog }
+
+show:
+    pattern: /blog/show/{id}
+    defaults: { _controller: AdrjBundle:Blog:show }
+
+works:
+    pattern: /works
+    defaults: { _controller: AdrjBundle:Works:works }
+
+list:
+    pattern: /works/{category}
+    defaults: { _controller: AdrjBundle:Works:list }
+
+show:
+    pattern: /works/{category}/show/{id_name}
+    defaults: { _controller: AdrjBundle:Works:show }
