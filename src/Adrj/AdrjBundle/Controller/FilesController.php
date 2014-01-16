@@ -9,6 +9,8 @@ class FilesController extends Controller
     public function accessAction()
     {
     // widok z textboxem do wpisania tokena
+        
+        return $this->render('AdrjBundle:Files:access.html.twig');
     }
 
     public function showAction($token)
@@ -22,6 +24,8 @@ class FilesController extends Controller
         {
             
         } 
+
+        return $this->render('AdrjBundle:Files:show.html.twig');
     }
 
 

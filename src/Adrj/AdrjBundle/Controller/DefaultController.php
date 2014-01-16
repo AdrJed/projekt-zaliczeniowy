@@ -9,6 +9,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
     // Akcja zrwacająca widok strony głównej
-        //return $this->render('AdrjBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('AdrjBundle:Default:index.html.twig');
     }
 }

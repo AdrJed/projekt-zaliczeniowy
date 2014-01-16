@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        {% block meta %}{% endblock %}             
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            {% block header %}
+            <p> Tutaj znajduje się nagłówek strony </p>
+            {% endblock %}
+        </header>
+        <div id=container">
+            {% block body %}{% endblock %}
+        </div>
+        <footer>
+            {% block footer %}
+            <p> Tutaj znajduje się stopka strony </p>
+            {% endblock %}
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,7 +1,16 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AdrjBundle:Works:works{% endblock %}
+{% block title %}AdrjBundle:Works:works_page{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Works:works page</h1>
+<div id="works">
+    <h1>Welcome to the Works:works page</h1>
+    <div class="overall">
+        <p>Strona startowa dzialu prac</p>
+        <div class="category">
+            <p>Dostepne kategorie prac</p>     
+        </div> 
+        {% block list %}{% endblock %}    
+    </div>
+</div>
 {% endblock %}
