@@ -1,12 +1,25 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AdrjBundle:Blog:blog{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
 <div id="blog">
- <h1>Welcome to the Blog:blog page</h1>
+ <h1>Welcome to the Blog:</h1>
     <div class="list">
-        <p>Tutj znajduje się lista wpisów na bloga</p>    
+        <ul>
+            {% for post in posts %}
+            <li>
+                <h2>{{ post.title }}</h2>
+                <p class="description">{{ post.description }}</p>
+                <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
+                <a href="{{ path('blog_show_post', { 'id': post.id }) }}">czytaj...</a>
+            </li>
+            {% else %}
+            <li>
+                <h2>Brak postów</h2>
+            </li>
+            {% endfor %}
+        </ul>    
     </div>     
 </div>
 {% endblock %}

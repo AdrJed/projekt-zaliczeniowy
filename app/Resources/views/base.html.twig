@@ -3,14 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         {% block meta %}{% endblock %}             
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Aj corner{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/main.css') }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         <header>
             {% block header %}
-            <p> Tutaj znajduje się nagłówek strony </p>
+            <h2> Tutaj znajduje się nagłówek strony </h2>
+            <ul class="menu">
+                <li><a href="{{ path('adrj_homepage') }}" >main()</a></li>
+                <li><a href="{{ path('blog_page') }}" >blog()</a></li>
+                <li><a href="{{ path('works_page') }}">works()</a></li>
+                <li><a href="{{ path('files_page') }}">files()</a></li>
+            </ul>
             {% endblock %}
         </header>
         <div id=container">

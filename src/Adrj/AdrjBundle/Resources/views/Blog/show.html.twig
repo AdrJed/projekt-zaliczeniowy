@@ -1,12 +1,14 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AdrjBundle:Blog:show{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block body %}
 <div id="blog">
  <h1>Welcome to the Blog:show page</h1>
     <div class="post">  
-        <p>To jest miejsce na tresc wpisu na bloga</p>
+        <h2>{{ post.title }}</h2>
+        <p class="content">{{ post.content }}</p>
+        <p class="createTime">{{ post.createTime|date('Y-m-d H:i:s') }}</p>
     </div>     
 </div>
 {% endblock %}

@@ -9,6 +9,8 @@ blog_page:
 blog_show_post:
     pattern: /blog/show/{id}
     defaults: { _controller: AdrjBundle:Blog:show }
+    requirements:
+        id: \d+
 
 works_page:
     pattern: /works
@@ -22,7 +24,7 @@ works_show_work:
     pattern: /works/{category}/show/{id_name}
     defaults: { _controller: AdrjBundle:Works:show }
 
-files_access:
+files_page:
     pattern: /files
     defaults: { _controller: AdrjBundle:Files:access }
 

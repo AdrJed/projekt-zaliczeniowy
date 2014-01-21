@@ -97,21 +97,53 @@ textarea {
    Author's custom styles
    Główna struktura elementów strony do ostylowania 
    ========================================================================== */
-
+*{ border: 1px dashed green;}
 body 
 {    
+    font-family: Consolas, sans-serif;
+    margin: 0 auto;
+    min-height: 1px;
+    max-width: 80%; min-width: 480px;
     
     header 
     {
+        margin: 0 auto;
+        min-height: 50px;
+        min-width: 99%;
         
+        p, h2
+        {
+            float: left;
+            margin: 0;
+        }
+        
+        ul.menu
+        {
+            list-style-type: none;
+            margin: 10px 10% 0 0; padding: 0;
+            float: right;
+            
+            li 
+            {
+                display: inline;
+                float: left;
+                margin: 0 2px;
+                a 
+                {
+                    display: block;
+                    width: 60px;
+                }
+            }   
+        }
     }
     
     div#container 
     {
+        background-color: #b6ff00;
+        min-width: 99%;
         
         div#home 
         {
-            
         }
         
         div#blog 
@@ -119,7 +151,28 @@ body
             
             div.list 
             {
-                
+                ul 
+                {
+                    li
+                    {
+                        h2
+                        {
+                            
+                        }
+                        p.description
+                        {
+                            
+                        }
+                        p.createTime
+                        {
+                            
+                        }
+                        a
+                        {
+                            
+                        }
+                    }
+                }
             }          
             div.post
             {
@@ -163,7 +216,13 @@ body
     
     footer 
     {
+        margin: 0 auto;
+        min-width: 99%;
         
+        h5
+        {
+            text-align: right;    
+        }
     }
 }
 

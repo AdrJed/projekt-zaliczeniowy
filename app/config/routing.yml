@@ -1,4 +1,3 @@
 adrj:
     resource: "@AdrjBundle/Resources/config/routing.yml"
-    prefix:   /
-
+    prefix: /

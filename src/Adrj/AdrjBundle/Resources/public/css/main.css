@@ -79,6 +79,52 @@ textarea {
    Author's custom styles
    Główna struktura elementów strony do ostylowania 
    ========================================================================== */
+* {
+  border: 1px dashed green;
+}
+body {
+  font-family: Consolas, sans-serif;
+  margin: 0 auto;
+  min-height: 1px;
+  max-width: 80%;
+  min-width: 480px;
+}
+body header {
+  margin: 0 auto;
+  min-height: 50px;
+  min-width: 99%;
+}
+body header p,
+body header h2 {
+  float: left;
+  margin: 0;
+}
+body header ul.menu {
+  list-style-type: none;
+  margin: 10px 10% 0 0;
+  padding: 0;
+  float: right;
+}
+body header ul.menu li {
+  display: inline;
+  float: left;
+  margin: 0 2px;
+}
+body header ul.menu li a {
+  display: block;
+  width: 60px;
+}
+body div#container {
+  background-color: #b6ff00;
+  min-width: 99%;
+}
+body footer {
+  margin: 0 auto;
+  min-width: 99%;
+}
+body footer h5 {
+  text-align: right;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
