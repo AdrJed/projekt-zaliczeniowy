@@ -79,9 +79,6 @@ textarea {
    Author's custom styles
    Główna struktura elementów strony do ostylowania 
    ========================================================================== */
-* {
-  border: 1px dashed green;
-}
 body {
   font-family: Consolas, sans-serif;
   margin: 0 auto;
@@ -115,8 +112,14 @@ body header ul.menu li a {
   width: 60px;
 }
 body div#container {
-  background-color: #b6ff00;
+  background-color: #f1f1f1;
   min-width: 99%;
+}
+body div#container .info.success {
+  background-color: #b6ff00;
+}
+body div#container .info.failure {
+  background-color: #ff6a00;
 }
 body footer {
   margin: 0 auto;

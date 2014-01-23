@@ -97,131 +97,142 @@ textarea {
    Author's custom styles
    Główna struktura elementów strony do ostylowania 
    ========================================================================== */
-*{ border: 1px dashed green;}
-body 
-{    
+//{ border: 1px dashed green;}
+body {
     font-family: Consolas, sans-serif;
     margin: 0 auto;
     min-height: 1px;
-    max-width: 80%; min-width: 480px;
-    
-    header 
-    {
+    max-width: 80%;
+    min-width: 480px;
+
+    header {
         margin: 0 auto;
         min-height: 50px;
         min-width: 99%;
-        
-        p, h2
-        {
+
+        p, h2 {
             float: left;
             margin: 0;
         }
-        
-        ul.menu
-        {
+
+        ul.menu {
             list-style-type: none;
-            margin: 10px 10% 0 0; padding: 0;
+            margin: 10px 10% 0 0;
+            padding: 0;
             float: right;
-            
-            li 
-            {
+
+            li {
                 display: inline;
                 float: left;
                 margin: 0 2px;
-                a 
-                {
+
+                a {
                     display: block;
                     width: 60px;
                 }
-            }   
+            }
         }
     }
-    
-    div#container 
-    {
-        background-color: #b6ff00;
+
+    div#container {
+        background-color: #f1f1f1;
         min-width: 99%;
-        
-        div#home 
-        {
+
+        div#home {
         }
-        
-        div#blog 
-        {
-            
-            div.list 
-            {
-                ul 
-                {
-                    li
-                    {
-                        h2
-                        {
-                            
+
+        div#blog {
+
+            div.list {
+                ul {
+                    li {
+                        h2 {
                         }
-                        p.description
-                        {
-                            
+
+                        p.description {
                         }
-                        p.createTime
-                        {
-                            
+
+                        p.createTime {
                         }
-                        a
-                        {
-                            
+
+                        a {
                         }
                     }
                 }
-            }          
-            div.post
-            {
-                
             }
-        }
-        
-        div#works 
-        {
-            
-            div.overall 
-            {   
-                           
-                div.category 
+
+            div.post {
+                h2 
+                {
+                }
+                p.content
                 {
                     
-                }               
-                div.list 
+                }
+                p.createTime
                 {
-                
-                }   
+                    
+                }
             }
-            div.work 
+            
+            div.form
             {
-                
-            }         
+               &.edit 
+               {
+                   
+               } 
+               
+               &.add
+               {
+                   
+               }
+            }
+        }
+
+        div#works {
+
+            div.overall {
+
+                div.category {
+                }
+
+                div.list {
+                }
+            }
+
+            div.work {
+            }
+        }
+
+        div#files {
+
+            div.access-form {
+            }
+
+            div.list {
+            }
         }
         
-        div#files {
-            
-            div.access-form
+        //klasy informacyjne
+        .info
+        {
+            &.success
             {
-                
-            }       
-            div.list 
+                background-color: #b6ff00;   
+            }
+            &.failure
             {
-                
+                background-color: #ff6a00;
             }
         }
-    }   
-    
-    footer 
-    {
+    }
+
+    footer {
         margin: 0 auto;
         min-width: 99%;
-        
-        h5
-        {
-            text-align: right;    
+
+        h5 {
+            text-align: right;
         }
     }
 }
