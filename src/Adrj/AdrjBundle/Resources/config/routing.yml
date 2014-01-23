@@ -12,6 +12,14 @@ blog_show_post:
     requirements:
         id: \d+
 
+blog_edit_post:
+    pattern: /blog/edit/{id}
+    defaults: { _controller: AdrjBundle:Blog:edit }
+
+blog_add_post:
+    pattern: /blog/add
+    defaults: { _controller: AdrjBundle:Blog:add }
+
 works_page:
     pattern: /works
     defaults: { _controller: AdrjBundle:Works:works }

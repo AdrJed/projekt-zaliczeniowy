@@ -32,4 +32,9 @@ class BlogPostsRepository extends EntityRepository
         return $query->getResult();
     }
 
+    public function addPost($post)
+    {
+
+    }
+
 }

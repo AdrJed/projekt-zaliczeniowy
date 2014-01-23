@@ -21,8 +21,12 @@
             </ul>
             {% endblock %}
         </header>
-        <div id=container">
-            {% block body %}{% endblock %}
+        <div id="container">
+            {% block body %}
+                {% if info is defined %}
+                <div class="info {{ info.type }}">{{ info.message }}</div>
+                {% endif %}
+            {% endblock %}
         </div>
         <footer>
             {% block footer %}

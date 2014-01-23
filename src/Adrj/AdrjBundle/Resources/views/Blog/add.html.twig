@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Dodaj wpis{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div id="blog">
+ <h1>Dodanie wpisu :</h1>
+    <div class="form add">  
+        {{ form(form) }}
+    </div>     
+</div>
+{% endblock %}
+

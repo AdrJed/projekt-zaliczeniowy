@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Edycja:{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div id="blog">
+ <h1>Edycja wpisu :</h1>
+    <div class="form edit"> 
+    {% if form %} 
+        {{ form(form) }}
+    {% elseif notfound %}
+        <p>{{ notfound }}</p>
+    {% endif %}
+    </div> 
+<a href="{{ path('blog_page') }}">Powrot</a>    
+</div>
+{% endblock %}
