@@ -2,6 +2,14 @@ adrj:
     resource: "@AdrjBundle/Resources/config/routing.yml"
     prefix: /
 
+adrj_files:
+    resource: "@AdrjFilesBundle/Resources/config/routing.yml"
+    prefix: /files
+
+adrj_works:
+    resource: "@AdrjWorksBundle/Resources/config/routing.yml"
+    prefix: /works
+
 adrj_blog:
     resource: "@AdrjBlogBundle/Resources/config/routing.yml"
     prefix: /blog

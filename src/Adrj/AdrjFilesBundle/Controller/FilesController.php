@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Controller;
+namespace Adrj\AdrjFilesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -10,7 +10,7 @@ class FilesController extends Controller
     {
     // widok z textboxem do wpisania tokena
         
-        return $this->render('AdrjBundle:Files:access.html.twig');
+        return $this->render('AdrjFilesBundle:Files:access.html.twig');
     }
 
     public function showAction($token)
@@ -25,7 +25,7 @@ class FilesController extends Controller
             
         } 
 
-        return $this->render('AdrjBundle:Files:show.html.twig');
+        return $this->render('AdrjFilesBundle:Files:show.html.twig');
     }
 
 

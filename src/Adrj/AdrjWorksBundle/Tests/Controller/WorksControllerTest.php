@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Tests\Controller;
+namespace Adrj\AdrjWorksBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -10,21 +10,21 @@ class WorksControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/works');
+        $crawler = $client->request('GET', '/');
     }
 
     public function testList()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/works/{category}');
+        $crawler = $client->request('GET', '/{category}');
     }
 
     public function testShow()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/works/{category}/show');
+        $crawler = $client->request('GET', '/{category}/show');
     }
 
 }

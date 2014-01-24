@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Controller;
+namespace Adrj\AdrjWorksBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -10,7 +10,7 @@ class WorksController extends Controller
     {
     // Akcja generująca linki do poszczególnych kategorii
         
-        return $this->render('AdrjBundle:Works:works.html.twig');
+        return $this->render('AdrjWorksBundle:Works:works.html.twig');
     }
 
     public function listAction($category)
@@ -25,14 +25,14 @@ class WorksController extends Controller
             
         }
 
-        return $this->render('AdrjBundle:Works:list.html.twig');
+        return $this->render('AdrjWorksBundle:Works:list.html.twig');
     }
 
     public function showAction($category,$id_name)
     {
     // Akcja zwracający widok szczegółów dla elementu z podanej kategorii i wybranym id-name
         
-        return $this->render('AdrjBundle:Works:show.html.twig');
+        return $this->render('AdrjWorksBundle:Works:show.html.twig');
     }
 
 }

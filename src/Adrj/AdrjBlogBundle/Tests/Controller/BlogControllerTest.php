@@ -10,14 +10,14 @@ class BlogControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/blog');
+        $crawler = $client->request('GET', '/');
     }
 
     public function testShow()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/blog/show');
+        $crawler = $client->request('GET', '/show');
     }
 
 }

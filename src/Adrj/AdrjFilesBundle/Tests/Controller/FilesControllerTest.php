@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Tests\Controller;
+namespace Adrj\AdrjFilesBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -10,7 +10,7 @@ class FilesControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/files');
+        $crawler = $client->request('GET', '/');
     }
 
 }

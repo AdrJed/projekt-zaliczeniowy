@@ -1,0 +1,15 @@
+#adrj_works_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: AdrjWorksBundle:Default:index }
+
+works_page:
+    pattern: /
+    defaults: { _controller: AdrjWorksBundle:Works:works }
+
+works_list:
+    pattern: /{category}
+    defaults: { _controller: AdrjWorksBundle:Works:list }
+
+works_show_work:
+    pattern: /{category}/show/{id_name}
+    defaults: { _controller: AdrjWorksBundle:Works:show }
