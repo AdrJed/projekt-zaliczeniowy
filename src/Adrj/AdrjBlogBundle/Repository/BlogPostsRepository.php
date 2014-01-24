@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Repository;
+namespace Adrj\AdrjBlogBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -30,11 +30,6 @@ class BlogPostsRepository extends EntityRepository
 
         $query = $queryBuilder->getQuery();
         return $query->getResult();
-    }
-
-    public function addPost($post)
-    {
-
     }
 
 }

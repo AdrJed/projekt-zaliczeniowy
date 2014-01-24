@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Form;
+namespace Adrj\AdrjBlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

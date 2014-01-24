@@ -1,11 +1,11 @@
 <?php
 
-namespace Adrj\AdrjBundle\Controller;
+namespace Adrj\AdrjBlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Adrj\AdrjBundle\Entity\BlogPosts;
-use Adrj\AdrjBundle\Form\BlogPostForm;
+use Adrj\AdrjBlogBundle\Entity\BlogPosts;
+use Adrj\AdrjBlogBundle\Form\BlogPostForm;
 
 class BlogController extends Controller
 {
@@ -13,9 +13,9 @@ class BlogController extends Controller
     {
     // Akcja zwracająca listę wpisów na blogu
         $entityManager = $this->getDoctrine()->getManager();
-        $posts = $entityManager->getRepository('AdrjBundle:BlogPosts')->getActivePosts(); 
+        $posts = $entityManager->getRepository('AdrjBlogBundle:BlogPosts')->getActivePosts(); 
 
-        return $this->render('AdrjBundle:Blog:blog.html.twig', array(
+        return $this->render('AdrjBlogBundle:Blog:blog.html.twig', array(
             'posts' => $posts));
     }
 
@@ -23,9 +23,9 @@ class BlogController extends Controller
     {
     // Zwraca widok szczegółowy wpisu o podanym id
         $entityManager = $this->getDoctrine()->getManager();
-        $post = $entityManager->getRepository('AdrjBundle:BlogPosts')->getActivePostById($id);  
+        $post = $entityManager->getRepository('AdrjBlogBundle:BlogPosts')->getActivePostById($id);  
 
-        return $this->render('AdrjBundle:Blog:show.html.twig', array( 
+        return $this->render('AdrjBlogBundle:Blog:show.html.twig', array( 
             'post' => $post[0]));
     }
 
@@ -34,7 +34,7 @@ class BlogController extends Controller
     // Edytuje post z podanym id
     // TODO: Dodać autoryzację akcji
         $entityManager = $this->getDoctrine()->getManager();
-        $post =  $entityManager->getRepository('AdrjBundle:BlogPosts')->find($id);
+        $post =  $entityManager->getRepository('AdrjBlogBundle:BlogPosts')->find($id);
 
         if ( $post != NULL )
         {
@@ -49,12 +49,12 @@ class BlogController extends Controller
                 return $this->redirect($this->generateUrl('blog_page'));
             }
 
-            return $this->render('AdrjBundle:Blog:edit.html.twig', array(
+            return $this->render('AdrjBlogBundle:Blog:edit.html.twig', array(
                 'form' => $form->createView() ));
         }
         else
         {
-            return $this->render('AdrjBundle:Blog:edit.html.twig', array(
+            return $this->render('AdrjBlogBundle:Blog:edit.html.twig', array(
                 'form' => NULL,
                 'notfound' => 'Nie znaleziono wpisu o podanym id'));
         }
@@ -80,10 +80,9 @@ class BlogController extends Controller
         }
         else
         {
-            return $this->redirect($this->generateUrl('blog_page'));
         }
 
-        return $this->render('AdrjBundle:Blog:add.html.twig', array(
+        return $this->render('AdrjBlogBundle:Blog:add.html.twig', array(
             'form' => $form->createView() ));
     }
 

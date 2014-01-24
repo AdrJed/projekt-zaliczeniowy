@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Entity;
+namespace Adrj\AdrjBlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

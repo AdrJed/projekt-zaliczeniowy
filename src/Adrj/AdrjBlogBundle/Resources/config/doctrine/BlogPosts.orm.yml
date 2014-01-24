@@ -1,6 +1,6 @@
-Adrj\AdrjBundle\Entity\BlogPosts:
+Adrj\AdrjBlogBundle\Entity\BlogPosts:
     type: entity
-    repositoryClass: Adrj\AdrjBundle\Repository\BlogPostsRepository
+    repositoryClass: Adrj\AdrjBlogBundle\Repository\BlogPostsRepository
     table: null
     id:
         id:

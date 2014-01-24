@@ -2,24 +2,6 @@ adrj_homepage:
     pattern:  /
     defaults: { _controller: AdrjBundle:Default:index }
 
-blog_page:
-    pattern: /blog
-    defaults: { _controller: AdrjBundle:Blog:blog }
-
-blog_show_post:
-    pattern: /blog/show/{id}
-    defaults: { _controller: AdrjBundle:Blog:show }
-    requirements:
-        id: \d+
-
-blog_edit_post:
-    pattern: /blog/edit/{id}
-    defaults: { _controller: AdrjBundle:Blog:edit }
-
-blog_add_post:
-    pattern: /blog/add
-    defaults: { _controller: AdrjBundle:Blog:add }
-
 works_page:
     pattern: /works
     defaults: { _controller: AdrjBundle:Works:works }

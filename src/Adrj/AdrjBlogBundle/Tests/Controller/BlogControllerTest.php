@@ -1,6 +1,6 @@
 <?php
 
-namespace Adrj\AdrjBundle\Tests\Controller;
+namespace Adrj\AdrjBlogBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
