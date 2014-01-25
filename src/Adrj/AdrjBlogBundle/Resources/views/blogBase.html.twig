@@ -1,15 +1,13 @@
 {% extends "::base.html.twig" %}
 {% block title %}Blog{% endblock %}
-
-{% block stylesheets %}
-{{ parent() }}
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/blog.css') }}" />
-{% endblock %}
-
+    {% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/blog.css') }}" />
+    {% endblock %}
 {% block body %}
 {{ parent() }}
-<div id="blog">
-    {% block blogContainer %}
-    {% endblock %}    
-</div>
+        <div id="blog">
+        {% block blogContainer %}
+        {% endblock %}    
+        </div>
 {% endblock %}

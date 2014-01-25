@@ -8,6 +8,8 @@
         <h2>{{ post.title }}</h2>
         <p class="content">{{ post.content }}</p>
         <p class="createTime">{{ post.createTime|date('Y-m-d H:i:s') }}</p>
+        {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('blog_edit_post', {'id': post.id}) }}">Edytuj wpis</a>
+        {% endif %}
     </div>     
 {% endblock %}

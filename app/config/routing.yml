@@ -2,6 +2,16 @@ adrj:
     resource: "@AdrjBundle/Resources/config/routing.yml"
     prefix: /
 
+login:
+    path: /login
+    defaults: { _controller: AdrjBundle:Default:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
 adrj_files:
     resource: "@AdrjFilesBundle/Resources/config/routing.yml"
     prefix: /files

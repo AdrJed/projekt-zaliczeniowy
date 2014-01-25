@@ -3,27 +3,30 @@
 
 {% block blogContainer %}
 {{ parent() }}
-<div id="blog">
- <h1>Welcome to the Blog:</h1>
-    <a href="{{ path('blog_add_post') }}">Dodaj wpis</a>
-    <div class="list">
-        <ul>
-            {% for post in posts %}
-            <li>
-                <h2>{{ post.title }}</h2>
-                <p class="description">{{ post.description }}</p>
-                <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
-                {% if post.EditTime %}
-                <p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>
-                {% endif %}
-                <a href="{{ path('blog_show_post', { 'id': post.id }) }}">czytaj...</a>
-            </li>
-            {% else %}
-            <li>
-                <h2>Brak postów</h2>
-            </li>
-            {% endfor %}
-        </ul>    
-    </div>     
-</div>
+<h1>Welcome to the Blog:</h1>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('blog_add_post') }}">Dodaj wpis</a>
+{% endif %}
+<div class="list">
+    <ul>
+    {% for post in posts %}
+    <li>
+        <h2>{{ post.title }}</h2>
+        <p class="description">{{ post.description }}</p>
+        <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
+        {% if post.EditTime %}
+        <p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>
+        {% endif %}
+        <a href="{{ path('blog_show_post', { 'id': post.id }) }}">czytaj...</a>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('blog_edit_post', { 'id': post.id }) }}">edytuj</a>
+        {% endif %}
+    </li>
+    {% else %}
+    <li>
+        <h2>Brak postów</h2>
+    </li>
+    {% endfor %}
+    </ul>    
+</div>     
 {% endblock %}
