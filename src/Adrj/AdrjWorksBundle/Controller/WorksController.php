@@ -35,4 +35,18 @@ class WorksController extends Controller
         return $this->render('AdrjWorksBundle:Works:show.html.twig');
     }
 
+    public function programAction($id_name)
+    {
+    // Akcja zwracająca widok dla szczegółów programu
+        
+    }
+
+    public function graphicsAction($id_name)
+    {
+    // Akcja zwracająca widok dla szczegółów grafiki
+        
+    }
+
+    public function 
+
 }

@@ -6,8 +6,11 @@
  <h1>Welcome to the Blog:show page</h1>
     <div class="post">  
         <h2>{{ post.title }}</h2>
+        <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
+        {% if post.EditTime %}
+        <p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>
+        {% endif %}
         <p class="content">{{ post.content }}</p>
-        <p class="createTime">{{ post.createTime|date('Y-m-d H:i:s') }}</p>
         {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('blog_edit_post', {'id': post.id}) }}">Edytuj wpis</a>
         {% endif %}

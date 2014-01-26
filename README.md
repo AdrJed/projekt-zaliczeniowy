@@ -34,15 +34,15 @@ kluczem (tokenem).
         - długi opis,
         - kilka przykładowych grafik,
 - BLOG
-    - widok listy wpisów
-        - tytuł,
-        - krótki opis/wstępna treść,
-        - data dodania,
-        - link przejścia do wpisu
-    - widok wybranego wpisu
-        - tytuł,
-        - pełna treść,
-        - data dodania
+    - widok listy wpisów - OK
+        - tytuł, - OK
+        - krótki opis/wstępna treść, - OK
+        - data dodania,edycji - OK 
+        - link przejścia do wpisu - OK
+    - widok wybranego wpisu - OK
+        - tytuł, - OK 
+        - pełna treść, - OK
+        - data dodania, edycji - OK
 - UDOSTĘPNIANIE PLIKÓW
     - widok główny
         - pole identyfikatora dostępu dla konkretnej grupy plików,

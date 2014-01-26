@@ -16,14 +16,14 @@
         <h2> Adrian Jędrzejak </h2>
         <div id="logging">
             {% if app.user %}
-            <p>({{ app.user.username }}) <a href="{{ path('logout') }}">WYLOGUJ</a></p>
+            <p>&#123;{{ app.user.username }}&#125; <a href="{{ path('logout') }}">WYLOGUJ</a></p>
             {% else %}
             <p><a href="{{ path('login') }}">ZALOGUJ</a></p>
             {% endif %}
         </div>
         <ul class="menu">
-            <li><a href="{{ path('adrj_homepage') }}" >main()</a></li>
-            <li><a href="{{ path('blog_page') }}" >blog()</a></li>
+            <li><a href="{{ path('adrj_homepage') }}">main()</a></li>
+            <li><a href="{{ path('blog_page') }}">blog()</a></li>
             <li><a href="{{ path('works_page') }}">works()</a></li>
             <li><a href="{{ path('files_page') }}">files()</a></li>
         </ul>
