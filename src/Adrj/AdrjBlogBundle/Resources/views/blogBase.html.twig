@@ -4,10 +4,11 @@
     {{ parent() }}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/blog.css') }}" />
     {% endblock %}
+
 {% block body %}
 {{ parent() }}
-        <div id="blog">
+    <div id="blog">
         {% block blogContainer %}
         {% endblock %}    
-        </div>
+    </div>
 {% endblock %}
