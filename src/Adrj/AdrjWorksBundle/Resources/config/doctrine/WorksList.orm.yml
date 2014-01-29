@@ -20,4 +20,5 @@ Adrj\AdrjWorksBundle\Entity\WorksList:
         thumb:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks: {  }

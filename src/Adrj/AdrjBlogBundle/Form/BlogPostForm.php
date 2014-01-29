@@ -13,7 +13,8 @@ class BlogPostForm extends AbstractType
             ->add('title', 'text')
             ->add('description', 'textarea')
             ->add('content', 'textarea')
-            ->add('active', 'checkbox')
+            ->add('active', 'checkbox', array(
+                'required' => FALSE))
             ->add('tag', 'text')
             ->add('Dodaj', 'submit');
     }
