@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block title %}Works{% endblock %}
+    {% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/works.css') }}" />
+    {% endblock %}
+
+{% block body %}
+{{ parent() }}
+    <div id="works">    
+        <div class="work {% block workType %}{% endblock %}">
+        {% block work %}
+        {% endblock %} 
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+Adrj\AdrjBlogBundle\Entity\BlogPosts:
+    type: entity
+    repositoryClass: Adrj\AdrjBlogBundle\Repository\BlogPostsRepository
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: '1024'
+        content:
+            type: text
+        unused:
+            type: string
+            length: '32'
+            nullable: true
+        createTime:
+            type: datetime
+        editTime:
+            type: datetime
+            nullable: true
+        active:
+            type: boolean
+            nullable: true
+        tag:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

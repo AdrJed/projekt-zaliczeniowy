@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        {% block meta %}{% endblock %}             
-        <title>{% block title %}Aj corner{% endblock %}</title>
-        {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/main.css') }}" />
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <header>
-            {% block header %}
-            <h2> Tutaj znajduje się nagłówek strony </h2>
-            <ul class="menu">
-                <li><a href="{{ path('adrj_homepage') }}" >main()</a></li>
-                <li><a href="{{ path('blog_page') }}" >blog()</a></li>
-                <li><a href="{{ path('works_page') }}">works()</a></li>
-                <li><a href="{{ path('files_page') }}">files()</a></li>
-            </ul>
-            {% endblock %}
-        </header>
-        <div id="container">
-            {% block body %}
-                {% if info is defined %}
-                <div class="info {{ info.type }}">{{ info.message }}</div>
-                {% endif %}
-            {% endblock %}
+<head>
+    <meta charset="UTF-8" />
+    {% block meta %}
+    {% endblock %}    
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />            
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/main.css') }}" />
+    {% endblock %}
+    <title>{% block title %}Aj corner{% endblock %}</title>
+</head>
+<body>
+    <header>
+    {% block header %}
+        <h2> Adrian Jędrzejak </h2>
+        <div id="logging">
+            {% if app.user %}
+            <p>&#123;{{ app.user.username }}&#125; <a href="{{ path('logout') }}">WYLOGUJ</a></p>
+            {% else %}
+            <p><a href="{{ path('login') }}">ZALOGUJ</a></p>
+            {% endif %}
         </div>
-        <footer>
-            {% block footer %}
-            <p> Tutaj znajduje się stopka strony </p>
-            {% endblock %}
-        </footer>
-        {% block javascripts %}{% endblock %}
-    </body>
+        <ul class="menu">
+            <li><a href="{{ path('adrj_homepage') }}">main()</a></li>
+            <li><a href="{{ path('blog_page') }}">blog()</a></li>
+            <li><a href="{{ path('works_page') }}">works()</a></li>
+            <li><a href="{{ path('files_page') }}">files()</a></li>
+        </ul>
+    {% endblock %}
+    </header>
+    <div id="container">
+    {% block body %}
+    {% if info is defined %}
+        <div class="info {{ info.type }}">{{ info.message }}</div>
+    {% endif %}
+    {% endblock %}
+    </div>
+    <footer>
+    {% block footer %}
+        <p> Tutaj znajduje się stopka strony </p>
+    {% endblock %}
+    </footer>
+    {% block javascripts %}
+    {% endblock %}
+</body>
 </html>

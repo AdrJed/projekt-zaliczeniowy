@@ -14,6 +14,17 @@ security:
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
+        adrj_page:
+            pattern: ^/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+                failure_path: login
+            logout:
+                path: /logout
+                target: /
+
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -36,3 +47,4 @@ security:
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/blog/(add|edit), roles: ROLE_ADMIN }

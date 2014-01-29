@@ -1,0 +1,18 @@
+Adrj\AdrjWorksBundle\Entity\WorksCategories:
+    type: entity
+    table: null
+    repositoryClass: Adrj\AdrjWorksBundle\Repository\WorksCategoriesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '64'
+        description:
+            type: string
+            length: '1024'
+    lifecycleCallbacks: {  }

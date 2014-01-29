@@ -1,0 +1,11 @@
+#adrj_files_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: AdrjFilesBundle:Default:index }
+
+files_page:
+    pattern: /
+    defaults: { _controller: AdrjFilesBundle:Files:access }
+
+files_show_list:
+    pattern: /{token}
+    defaults: { _controller: AdrjFilesBundle:Files:show }

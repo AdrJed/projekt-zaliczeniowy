@@ -1,0 +1,24 @@
+Adrj\AdrjWorksBundle\Entity\WorksList:
+    type: entity
+    table: null
+    repositoryClass: Adrj\AdrjWorksBundle\Repository\WorksListRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        categoryId:
+            type: integer
+        name:
+            type: string
+            length: 255
+        shortDesc:
+            type: string
+            length: '1024'
+        thumb:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }

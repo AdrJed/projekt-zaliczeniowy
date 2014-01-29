@@ -1,0 +1,17 @@
+blog_page:
+    pattern: /
+    defaults: { _controller: AdrjBlogBundle:Blog:blog }
+
+blog_show_post:
+    pattern: /show/{id}
+    defaults: { _controller: AdrjBlogBundle:Blog:show }
+    requirements:
+        id: \d+
+
+blog_edit_post:
+    pattern: /edit/{id}
+    defaults: { _controller: AdrjBlogBundle:Blog:edit }
+
+blog_add_post:
+    pattern: /add
+    defaults: { _controller: AdrjBlogBundle:Blog:add }
