@@ -1,8 +1,23 @@
-{% extends "works.html.twig" %}
+{% extends "AdrjWorksBundle:Works:works.html.twig" %}
 
 {% block list %}
 <div class="list">
     <h2>Nazwa kategorii</h2>
-    <p>Tutaj znajduje sie lista prac z danej kategorii</p>     
+    <p>Tutaj znajduje sie lista prac z danej kategorii</p>
+    <ul>
+        {% for work in works %}
+        <li>
+            <h2>{{ work.name }}</h2>
+            <p>{{ work.shortDesc }}</p>
+            {% if work.thumb is defined %}
+            <img src="{{ work.thumb }}" alt="{{ work.name }}"/>
+            {% endif %}
+        </li>
+        {% else %}
+        <li>
+            <h2>Brak prac w danej kategorii</h2>
+        </li>
+        {% endfor %}
+    </ul>         
 </div>
 {% endblock %}

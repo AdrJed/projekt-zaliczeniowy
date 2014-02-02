@@ -8,7 +8,13 @@
     <div class="overall">
         <p>Strona startowa dzialu prac</p>
         <div class="category">
-            <p>Dostepne kategorie prac</p>     
+            <p>Dostepne kategorie prac</p>
+            <ul>
+                <li><a href="{{ path('works_list', { 'category':'graphics' }) }}">Grafika</a></li>
+                <li><a href="{{ path('works_list', { 'category':'programs' }) }}">Programy</a></li>
+                <li><a href="{{ path('works_list', { 'category':'websites' }) }}">Strony internetowe</a></li>
+                <li><a href="{{ path('works_list', { 'category':'all' }) }}">Wszystko</a></li>
+            </ul>     
         </div> 
         {% block list %}{% endblock %}    
     </div>

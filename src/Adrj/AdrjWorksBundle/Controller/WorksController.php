@@ -29,7 +29,9 @@ class WorksController extends Controller
             // Prawdopodobnie użycie JOIN dla WorksCategories i WorksList
         }
 
-        return $this->render('AdrjWorksBundle:Works:list.html.twig');
+        return $this->render('AdrjWorksBundle:Works:list.html.twig', array(
+            'works' => $worksList
+            ));
     }
 
     public function showAction($category,$id_name)
@@ -67,7 +69,7 @@ class WorksController extends Controller
 
     public function websiteAction($id_name)
     {
-    // Akcja zwracająca widok dla szczegółów strony głównej
+    // Akcja zwracająca widok dla szczegółów strony internetowej
 
         return $this->render('AdrjWorksBundle:Works:show.website.html.twig');
     }

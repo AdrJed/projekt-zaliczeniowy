@@ -115,7 +115,11 @@ body header ul.menu li a {
   display: block;
   width: 60px;
 }
-body header div#logging {
+body div#container {
+  background-color: #f1f1f1;
+  min-width: 99%;
+}
+body div#container div#logging {
   float: right;
   margin: 10px 1% 0 0;
 }

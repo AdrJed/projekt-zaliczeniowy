@@ -15,7 +15,7 @@
         <p class="description">{{ post.description }}</p>
         <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
         {% if post.editTime %}
-        <p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>
+        {#<p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>#}
         {% endif %}
         <a href="{{ path('blog_show_post', { 'id': post.id }) }}">czytaj...</a>
         {% if is_granted('ROLE_ADMIN') %}
