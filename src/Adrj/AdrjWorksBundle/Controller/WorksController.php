@@ -22,11 +22,13 @@ class WorksController extends Controller
         if ($category == 'all')
         {
             $worksList = $worksList->findAll();
+            //TODO: Poprawić aby zwracało połączone tabele WorksList i WorksCategories
+            //$worksList = $worksList->getAllWorks();
         }
         else
         {
             // Zwraca listę prac dla wybranej kategorii
-            // Prawdopodobnie użycie JOIN dla WorksCategories i WorksList
+            $worksList = $worksList->getWorksByCategory($category);
         }
 
         return $this->render('AdrjWorksBundle:Works:list.html.twig', array(

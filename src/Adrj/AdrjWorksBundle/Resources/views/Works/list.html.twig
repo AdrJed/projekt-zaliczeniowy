@@ -11,6 +11,7 @@
             <p>{{ work.shortDesc }}</p>
             {% if work.thumb is defined %}
             <img src="{{ work.thumb }}" alt="{{ work.name }}"/>
+            <a href="{{ work.categoryId }}/show/{{ work.id}}" >pokaz</a>
             {% endif %}
         </li>
         {% else %}

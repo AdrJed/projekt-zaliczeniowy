@@ -12,4 +12,24 @@ use Doctrine\ORM\EntityRepository;
  */
 class WorksListRepository extends EntityRepository
 {
+    public function getAllWorks()
+    {
+        $queryBuilder = $this->createQueryBuilder('w')
+        ->select('c, w')
+        ->innerJoin('AdrjWorksBundle:WorksCategories', 'c', 'WITH', 'w.categoryId = c.id');
+
+        $query = $queryBuilder->getQuery();
+        return $query->getResult();
+    }
+
+    public function getWorksByCategory($category)
+    {
+        $queryBuilder = $this->createQueryBuilder('w')
+        ->innerJoin('AdrjWorksBundle:WorksCategories', 'c', 'WITH', 'w.categoryId = c.id')
+        ->where('c.name = :category')
+        ->setParameter('category', $category);
+
+        $query = $queryBuilder->getQuery();
+        return $query->getResult();
+    }
 }
