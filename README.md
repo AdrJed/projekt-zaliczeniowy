@@ -17,18 +17,18 @@ kluczem (tokenem).
 ---- Szablon strony -------------------------------------------
 
 - STRONA GŁÓWNA
-    - nagłówek z prostym menu i podstawowymi informacjami czy linkami,
+    - nagłówek z prostym menu i podstawowymi informacjami czy linkami, - OK
     - kilka słów o sobie,
     - grafiki z głównymi kategoriami menu (blog, prace, pliki),
     - lista ostatnich aktywności (wpis na blogu, dodana praca, itp.)
 - PRACE
-    - widok wyboru kategorii (grafika, program, strona internetowa itp.)
+    - widok wyboru kategorii (grafika, program, strona internetowa itp.) - OK
     - widok listy elementów dla danej kategorii
-        - tytuł,
-        - krótki opis,
-        - data dodania, edycji,
-        - grafika/logo/miniatura,
-        - link do szczegółów,
+        - tytuł, - OK
+        - krótki opis, - OK
+        - data dodania, edycji, - TODO
+        - grafika/logo/miniatura, - TODO
+        - link do szczegółów, - TODO
     - widok szczegółów wybranego elementu
         - tytuł,
         - długi opis,
