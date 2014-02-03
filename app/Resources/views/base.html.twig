@@ -14,7 +14,8 @@
 <body>
     <header>
     {% block header %}
-        <h2> Adrian Jędrzejak </h2>
+        <img class="logo" src="{{ asset('images/logo_AJ.png') }}" alt="logo_AJ" />
+        <h2>ADRIAN JĘDRZEJAK</h2>
         <div id="logging">
             {% if app.user %}
             <p>&#123;{{ app.user.username }}&#125; <a href="{{ path('logout') }}">WYLOGUJ</a></p>
@@ -23,10 +24,10 @@
             {% endif %}
         </div>
         <ul class="menu">
-            <li><a href="{{ path('adrj_homepage') }}">main()</a></li>
-            <li><a href="{{ path('blog_page') }}">blog()</a></li>
-            <li><a href="{{ path('works_page') }}">works()</a></li>
-            <li><a href="{{ path('files_page') }}">files()</a></li>
+            <li><a href="{{ path('adrj_homepage') }}">GŁÓWNA</a></li>
+            <li><a href="{{ path('blog_page') }}">BLOG</a></li>
+            <li><a href="{{ path('works_page') }}">PRACE</a></li>
+            <li><a href="{{ path('files_page') }}">PLIKI</a></li>
         </ul>
     {% endblock %}
     </header>
