@@ -7,5 +7,13 @@ files_page:
     defaults: { _controller: AdrjFilesBundle:Files:access }
 
 files_show_list:
-    pattern: /{token}
+    pattern: /show
     defaults: { _controller: AdrjFilesBundle:Files:show }
+
+files_get_file:
+    pattern: /get/{fileName}
+    defaults: { _controller: AdrjFilesBundle:Files:get }
+
+files_add_file:
+    pattern: /add
+    defaults: { _controller: AdrjFilesBundle:Files:add }

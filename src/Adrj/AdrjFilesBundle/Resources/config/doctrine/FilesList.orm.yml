@@ -1,0 +1,20 @@
+Adrj\AdrjFilesBundle\Entity\FilesList:
+    type: entity
+    table: null
+    repositoryClass: Adrj\AdrjFilesBundle\Repository\FilesListRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tokenId:
+            type: integer
+        name:
+            type: string
+            length: 255
+        extension:
+            type: string
+            length: '8'
+    lifecycleCallbacks: {  }

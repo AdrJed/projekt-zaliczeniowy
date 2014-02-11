@@ -4,9 +4,17 @@
 
 {% block body %}
 <div id="files">
-<h1>Welcome to the Files:access page</h1>
+<h1>Pliki: dostep</h1>
+    {% if message is defined %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('files_add_file') }}">dodaj pliki</a>
+    {% endif %}
+    <a href="{{ path('files_show_list') }}">pliki publiczne</a>
+    <p>Wprowadz token, aby uzyskac dostep do plikow przeznaczonych dla ciebie</p>
     <div class="access-form">
-    <p>Tutaj znajduje sie pole do wprowadzenia tokena</p>
+        {{ form(tokenForm) }}
     </div>
 </div>
 {% endblock %}

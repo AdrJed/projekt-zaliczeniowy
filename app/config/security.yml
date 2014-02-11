@@ -48,3 +48,4 @@ security:
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         - { path: ^/blog/(add|edit), roles: ROLE_ADMIN }
+        - { path: ^/files/add, roles: ROLE_ADMIN }
