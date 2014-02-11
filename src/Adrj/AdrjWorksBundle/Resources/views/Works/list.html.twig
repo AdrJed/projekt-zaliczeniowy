@@ -1,8 +1,8 @@
 {% extends "AdrjWorksBundle:Works:works.html.twig" %}
 
 {% block list %}
-<div class="list">
-    <h2>Nazwa kategorii</h2>
+<div class="list works">
+    <h2>{{ categoryName }}</h2>
     <p>Tutaj znajduje sie lista prac z danej kategorii</p>
     <ul>
         {% for work in works %}

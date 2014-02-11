@@ -7,20 +7,21 @@
 {% if is_granted('ROLE_ADMIN') %}
 <a href="{{ path('blog_add_post') }}">Dodaj wpis</a>
 {% endif %}
-<div class="list">
+<div class="list posts">
     <ul>
     {% for post in posts %}
     <li>
-        <h2>{{ post.title }}</h2>
+        <div class="bc top-left"></div>
+        <a href="{{ path('blog_show_post', { 'id': post.id }) }}"><h2>{{ post.title }}</h2></a>
         <p class="description">{{ post.description }}</p>
         <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
         {% if post.editTime %}
         {#<p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>#}
         {% endif %}
-        <a href="{{ path('blog_show_post', { 'id': post.id }) }}">czytaj...</a>
         {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('blog_edit_post', { 'id': post.id }) }}">edytuj</a>
         {% endif %}
+        <div class="bc bottom-right"></div>
     </li>
     {% else %}
     <li>

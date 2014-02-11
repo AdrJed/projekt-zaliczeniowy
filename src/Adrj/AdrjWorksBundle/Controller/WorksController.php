@@ -13,26 +13,44 @@ class WorksController extends Controller
         return $this->render('AdrjWorksBundle:Works:works.html.twig');
     }
 
+    private function addCategoryName($worksList)
+    {
+    // Przekombinowana metoda pomocnicza dodająca nazwę kategorii do rekordu z pracą
+    // Albo znaleźć sposób na połączenie tabel, albo stworzyć jedną tabelę
+        $entityManager = $this->getDoctrine()->getManager();
+        $categoriesList = $entityManager->getRepository('AdrjWorksBundle:WorksCategories')->findAll();
+        foreach( $worksList as $work)
+        {
+            $work->setCategoryId($categoriesList[$work->getCategoryId()-1]->getName());
+        }
+        return $worksList;
+    }
+
     public function listAction($category)
     {
     // Akcja listująca prace z danej kategorii (graphics, programs, websites, all)
+        $categoryName = NULL;
         $entityManager = $this->getDoctrine()->getManager();
         $worksList = $entityManager->getRepository('AdrjWorksBundle:WorksList');
 
         if ($category == 'all')
         {
             $worksList = $worksList->findAll();
-            //TODO: Poprawić aby zwracało połączone tabele WorksList i WorksCategories
+            $categoryName = 'Wszystko';
             //$worksList = $worksList->getAllWorks();
         }
         else
         {
             // Zwraca listę prac dla wybranej kategorii
             $worksList = $worksList->getWorksByCategory($category);
+            $categoryName = $category;
         }
 
+        // TODO: Przekombinowane, trzeba uprościć
+        $worksList = $this->addCategoryName($worksList);
         return $this->render('AdrjWorksBundle:Works:list.html.twig', array(
-            'works' => $worksList
+            'works' => $worksList,
+            'categoryName' => $categoryName
             ));
     }
 

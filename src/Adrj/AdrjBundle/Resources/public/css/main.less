@@ -92,234 +92,318 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
-
+/* ===========================================================================
+    Czcionki
+   =========================================================================== */
+/* Open Sans */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../../fonts/OpenSans-Light-webfont.eot');
+    src: url('../../../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../../../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../../../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../../../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../../../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../../../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Semibold-webfont.eot');
+    src: url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Semibold-webfont.woff') format('woff'),
+         url('OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../../../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../../../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../../../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+/* ==========================================================================
+    Kolory
+   ========================================================================== */
+/* Kolory motywu */
+@colorMain: #ff6a00;
+@colorHover: #808080;
+@colorBackLighter: #eeeeee;
 /* ==========================================================================
    Author's custom styles
    Główna struktura elementów strony do ostylowania 
    ========================================================================== */
-//{ border: 1px dashed green;}
+/* == CIAŁO DOKUMENTU == */
 body {
-    font-family: Consolas, sans-serif;
+    font-family: 'Open Sans', 'Segoe UI Light', Tahoma, sans-serif;
+    font-weight: 300;
     margin: 0 auto;
-    min-height: 1px;
     max-width: 80%;
     min-width: 480px;
+}
 
-    header {
-        border-bottom: 1px solid #ff6a00;
-        font-family:  'Segoe UI Light', sans-serif; 
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 auto;
-        min-height: 60px;
-        min-width: 99%;
-        padding: 0 0 1% 0;
+/* == NAGŁÓWEK == */
+header {
+    border-bottom: 1px solid @colorMain;
+    margin: 0 auto;
+    min-height: 60px;
+    min-width: 100%;
+    padding: 0 0 10px 0;
 
-        p, h2 {
-            float: left;
-            margin: 0;
-        }
-
-        h2 {
-            border-left: 1px solid #ff6a00;
-            display: block;
-            font-size: 1.9em;
-            font-weight: 200;
-            margin: 5px 0 0 0;
-            padding: 0 0 0 10px;           
-        }
-        
-        img.logo {
-            display: block;
-            float: left;
-            height: 60px;
-            margin: 5px 10px;
-        }
-
-        ul.menu {
-            list-style-type: none;
-            margin: 10px 1% 0 1%;
-            padding: 0;
-            float: right;
-
-            li {
-                display: inline;
-                float: left;
-                margin: 0 2px;
-
-                a {
-                    color: #000;
-                    text-decoration: none;
-                    font-size: 1.4em;
-                    margin: 0 5px;
-                    padding: 0px;
-                    width: 80px;
-                    transition: padding 100ms;
-                    &:hover {
-                        color: #808080;
-                        border-right: 1px solid #ff6a00;
-                        padding: 0 5px 0 0;
-                        transition: padding 100ms;
-                    }
-                }
-            }
-        }
-        
-        div#logging
-        {
-            display: block;
-            float: right;
-            margin: 10px 1% 0 0;
-            
-            a {
-                color: #ff6a00;
-                text-decoration: none;
-                font-size: 1.4em;
-                display: block;
-                float: right;
-                &:hover {
-                    color: #808080;
-                }
-            }
-        }
-    }
-
-    div#container {
-        min-width: 99%;
-
-        div#home {
-        }
-     
-        
-        div#blog {
-            font-family: 'Segoe UI Light', sans-serif;
-            padding: 0 0 0 50px;
-            float: left;
-
-            div.list {
-                ul {
-                    float: left;
-                    list-style: none;
-                    margin:0;
-                    padding:0;
-                    li {
-                        border-bottom: 1px solid #ff6a00;
-                        border-right:  1px solid #ff6a00;
-                        float: left;
-                        padding: 2px 10px 2px 10px;
-                        width: 65%;
-                        
-                        h2 {
-                            color: #ff6a00;
-                            font-size: 1.4em;
-                            font-weight: 400;
-                            margin: 0;
-                            padding:  0;
-                        }
-                        p,a {
-                            margin:  0;
-                        }
-
-                        p.description {
-                            font-style: italic;
-                            font-size: 1.2em;
-                            margin: 0 5px;
-                            padding: 0 0 0 2%;
-                            clear: both;
-                        }
-
-                        p.createTime {
-                            font-size: 1em;
-                            float: right;
-                        }
-
-                        a {
-                            display: block;
-                            color: #ff6a00;
-                            float: left;
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
-
-            div.post {
-                h2 
-                {
-                }
-                p.content
-                {
-                    
-                }
-                p.createTime
-                {
-                    
-                }
-            }
-            
-            div.form
-            {
-               &.edit 
-               {
-                   
-               } 
-               
-               &.add
-               {
-                   
-               }
-            }
-        }
-
-        div#works {
-
-            div.overall {
-
-                div.category {
-                }
-
-                div.list {
-                }
-            }
-
-            div.work {
-            }
-        }
-
-        div#files {
-
-            div.access-form {
-            }
-
-            div.list {
-            }
-        }
-        
-        //klasy informacyjne
-        .info
-        {
-            &.success
-            {
-                background-color: #b6ff00;   
-            }
-            &.failure
-            {
-                background-color: #ff6a00;
-            }
-        }
-    }
-
-    footer {
-        margin: 0 auto;
-        min-width: 99%;
+    p, h2 {
         float: left;
+        margin: 0;
+    }
 
-        h5 {
-            text-align: right;
+    h2 {
+        border-left: 1px solid @colorMain;
+        font-size: 1.9em;
+        font-weight: normal;
+        margin: 5px 0 0 0;
+        padding: 0 0 0 10px;
+    }
+
+    img.logo {
+        display: block;
+        float: left;
+        height: 60px;
+        margin: 5px 10px;
+    }
+}
+
+/* == GŁÓWNY KONTENER == */
+div#container {
+    float: left;
+    margin: 5px auto;
+    min-width: 100%;
+    min-height: 480px;
+    position: relative;
+    // Nadrzędne tytuły zawartości
+    h1 {
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+}
+    /* == DZIAŁY STRONY == */
+    
+    /* DZIAŁ STRONY DOMOWEJ */
+    div#home {
+    }
+
+    /* DZIAŁ BLOGA */
+    div#blog {
+    float: left;
+    padding: 0 0 0 15px;
+    }
+    // Specyficzne ustawienia listy postów bloga
+    div.list.posts {
+        ul {
+            li {
+                margin: 0 0 5px 0;
+                padding: 2px;
+                width: 65%;
+                position: relative;                       
+                
+                 a {
+                    display: block;
+                    color: @colorMain;
+                    float: left;
+                    text-decoration: none;
+                    h2 {
+                        font-size: 1.4em;
+                        font-weight: 600;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                
+                p.description {
+                    color: @colorHover;
+                    clear: both;
+                    font-size: 1em;
+                    margin: 0;
+                    padding: 0;
+                    text-indent: 10px;
+                }
+
+                p.createTime {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 0.8em;
+                }
+
+            }
+        }
+    }
+
+    /* DZIAŁ PRAC */
+    div#works {
+
+        div.overall {
+
+            div.category {
+            }
+
+            div.list {
+            }
+        }
+
+        div.work {
+        }
+    }   
+    // Specyficzne ustawienia listy prac
+    .list.works {
+    
+    }
+
+    /* DZIAŁ UDOSTĘPNIANIA PLIKÓW */
+    div#files {
+
+    }  
+    div.access-form {
+    
+    }
+    // Specyficzne ustawienia listy udosępnionych plików
+    .list.files {
+    
+    }
+
+/* STOPKA STRONY */
+footer {
+    border-top: 1px solid @colorMain;
+    clear: both;
+    margin: 0 auto;
+    min-width: 100%;
+    float: left;
+
+    h5 {
+        text-align: right;
+    }
+}
+
+/* ==========================================================================
+   Klasy elementów powtarzających się w różnych działach 
+   ========================================================================== */
+// Menu w nagłówku
+header ul.menu {
+    list-style-type: none;
+    margin: 10px 1% 0 1%;
+    padding: 0;
+    float: right;
+
+    li {
+        display: inline;
+        float: left;
+        margin: 0 2px;
+        position: relative;
+
+        a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.4em;
+            margin: 0 5px;
+            padding: 0px;
+            width: 80px;
+            transition: padding 100ms;
+            &:hover {
+                color: @colorHover;
+                border-right: 1px solid @colorMain;
+                padding: 0 5px 0 0;
+                transition: padding 100ms;
+            }
         }
     }
 }
 
+// Obszar logowania w nagłówku
+div#logging
+{
+    display: block;
+    float: right;
+    margin: 10px 1% 0 0;
+            
+    a {
+        color: @colorMain;
+        text-decoration: none;
+        font-size: 1.4em;
+        display: block;
+        float: right;
+        &:hover {
+            color: @colorHover;
+        }
+    }
+}
+
+// Podstawowy styl listy
+.list ul, .list ol { 
+    float: left;
+    list-style: none;
+    margin:0;
+    padding:0;
+    
+    li {
+        background-color: @colorBackLighter;
+    }         
+}
+
+// Podstawowy styl formularza
+.form {
+    
+}
+/* ==========================================================================
+   Specjalne elementy stylu możliwe do zastosowania w różnych elementach
+   ========================================================================== */
+// Obramowanie krawędziowe elementów
+// UWAGA - element nadrzędny musi posiadać atrybut 'position: relative;'
+.bc{
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    
+    &.top-left {
+        top: 0;
+        left: 0;
+        border-top: 1px solid @colorMain;
+        border-left: 1px solid @colorMain;
+    }
+    &.top-right {
+        top: 0;
+        right: 0;
+        border-top: 1px solid @colorMain;
+        border-right: 1px solid @colorMain;
+    }
+    &.bottom-left {
+        bottom: 0;
+        left: 0;
+        border-bottom: 1px solid @colorMain;
+        border-left: 1px solid @colorMain;
+    }
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
+        border-bottom: 1px solid @colorMain;
+        border-right: 1px solid @colorMain;
+    }
+}
 
 /* ==========================================================================
    Helper classes

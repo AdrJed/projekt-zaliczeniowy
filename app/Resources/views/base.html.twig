@@ -14,7 +14,7 @@
 <body>
     <header>
     {% block header %}
-        <img class="logo" src="{{ asset('images/logo_AJ.png') }}" alt="logo_AJ" />
+        <a href="/"><img class="logo" src="{{ asset('images/logo_AJ.png') }}" alt="logo_AJ" /></a>
         <h2>ADRIAN JĘDRZEJAK</h2>
         <div id="logging">
             {% if app.user %}
@@ -24,18 +24,28 @@
             {% endif %}
         </div>
         <ul class="menu">
-            <li><a href="{{ path('adrj_homepage') }}">GŁÓWNA</a></li>
-            <li><a href="{{ path('blog_page') }}">BLOG</a></li>
-            <li><a href="{{ path('works_page') }}">PRACE</a></li>
-            <li><a href="{{ path('files_page') }}">PLIKI</a></li>
+            <li><div class="border-corner top-left"></div>
+                <a href="{{ path('adrj_homepage') }}">GŁÓWNA</a>
+            </li>
+            <li><div class="border-corner top-left"></div>
+                <a href="{{ path('blog_page') }}">BLOG</a>
+            </li>
+            <li><div class="border-corner top-left"></div>
+                <a href="{{ path('works_page') }}">PRACE</a>
+            </li>
+            <li><div class="border-corner top-left"></div>
+                <a href="{{ path('files_page') }}">PLIKI</a>
+            </li>
         </ul>
     {% endblock %}
     </header>
     <div id="container">
+        <div class="bc top-left"></div><div class="bc top-right"></div>
     {% block body %}
     {% if info is defined %}
         <div class="info {{ info.type }}">{{ info.message }}</div>
     {% endif %}
+        <div class="bc bottom-left"></div><div class="bc bottom-right"></div>
     {% endblock %}
     </div>
     <footer>
