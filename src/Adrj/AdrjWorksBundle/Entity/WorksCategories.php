@@ -80,4 +80,13 @@ class WorksCategories
     {
         return $this->description;
     }
+    
+    public function jsonSerializeCategories()
+    {
+        return array(
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description
+        );     
+    }
 }

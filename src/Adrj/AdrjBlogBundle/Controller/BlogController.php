@@ -4,29 +4,58 @@ namespace Adrj\AdrjBlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Adrj\AdrjBlogBundle\Entity\BlogPosts;
 use Adrj\AdrjBlogBundle\Form\BlogPostForm;
 
 class BlogController extends Controller
 {
-    public function blogAction()
+    private function blogBase()
     {
-    // Akcja zwracająca listę wpisów na blogu
+    // Zwraca listę wpisów na blogu
         $entityManager = $this->getDoctrine()->getManager();
         $posts = $entityManager->getRepository('AdrjBlogBundle:BlogPosts')->getActivePosts(); 
-
+        return $posts;
+    }
+    
+    public function blogAction()
+    {
         return $this->render('AdrjBlogBundle:Blog:blog.html.twig', array(
-            'posts' => $posts));
+            'posts' => $this->blogBase()));
+    }
+    
+    public function blogApiAction()
+    {
+        $i=0;
+        $postsArray = array();
+        $posts = $this->blogBase();
+        foreach ($posts as $post)
+        {
+            $postsArray[$i]=$post->jsonSerializePost();    
+            $i++;
+        }
+        $json = new JsonResponse($postsArray);
+        return $json;
     }
 
-    public function showAction($id)
+    private function showBase($id)
     {
     // Zwraca widok szczegółowy wpisu o podanym id
         $entityManager = $this->getDoctrine()->getManager();
         $post = $entityManager->getRepository('AdrjBlogBundle:BlogPosts')->getActivePostById($id);  
-
+        return $post;
+    }
+    
+    public function showAction($id)
+    {
         return $this->render('AdrjBlogBundle:Blog:show.html.twig', array( 
-            'post' => $post[0]));
+            'post' => $this->showBase($id)[0]));      
+    }
+    
+    public function showApiAction($id)
+    {
+        $post = $this->showBase($id)[0]->jsonSerializePostContent();
+        return new JsonResponse($post);
     }
 
     public function editAction($id, Request $request)

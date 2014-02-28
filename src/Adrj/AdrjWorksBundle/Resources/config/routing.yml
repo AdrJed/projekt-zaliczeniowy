@@ -5,11 +5,23 @@
 works_page:
     pattern: /
     defaults: { _controller: AdrjWorksBundle:Works:works }
+    
+works_api_page:
+    pattern: /api
+    defaults: { _controller: AdrjWorksBundle:Works:worksApi }
 
 works_list:
     pattern: /{category}
     defaults: { _controller: AdrjWorksBundle:Works:list }
+    
+works_api_list:
+    pattern: /api/c/{category}
+    defaults: { _controller: AdrjWorksBundle:Works:listApi }
 
 works_show_work:
     pattern: /{category}/show/{id_name}
     defaults: { _controller: AdrjWorksBundle:Works:show }
+
+works_api_show_work:
+    pattern: /api/s/{category}/{id_name}
+    defaults: { _controller: AdrjWorksBundle:Works:showApi }

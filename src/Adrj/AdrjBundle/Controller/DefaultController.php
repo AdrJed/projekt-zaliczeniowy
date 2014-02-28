@@ -13,6 +13,12 @@ class DefaultController extends Controller
     // Akcja zwracająca widok strony głównej
         return $this->render('AdrjBundle:Default:index.html.twig');
     }
+    
+    public function apiInfoAction()
+    {
+    // HTML z informacją o dostępnych funkcjach api
+        return $this->render('AdrjBundle:Default:apiinfo.html.twig');
+    }
 
     public function loginAction(Request $request)
     {

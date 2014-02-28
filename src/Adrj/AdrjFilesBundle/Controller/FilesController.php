@@ -5,6 +5,7 @@ namespace Adrj\AdrjFilesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Adrj\AdrjFilesBundle\Entity\FilesList;
 use Adrj\AdrjFilesBundle\Entity\FilesTokens;
@@ -12,6 +13,13 @@ use Adrj\AdrjFilesBundle\Form\FilesTokenForm;
 
 class FilesController extends Controller
 {
+    private function accessBase($token)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $tokenId = $entityManager->getRepository('AdrjFilesBundle:FilesTokens')->findByToken($token);
+        return $tokenId;
+    }
+    
     public function accessAction(Request $request)
     {
     // widok z textboxem do wpisania tokena
@@ -22,8 +30,7 @@ class FilesController extends Controller
 
         if ( $tokenForm->isValid())
         {
-            $entityManager = $this->getDoctrine()->getManager();
-            $tokenId = $entityManager->getRepository('AdrjFilesBundle:FilesTokens')->findByToken($token->getToken());
+            $tokenId = $this->accessBase($token->getToken());
 
             if ( $tokenId != NULL)
             {
@@ -41,15 +48,38 @@ class FilesController extends Controller
             'tokenForm' => $tokenForm->createView(),
             'message' => 'Wprowadź \'public\', aby wylistować pliki publiczne' ));
     }
+    
+    public function accessApiAction($token)
+    {
+        $tokenId = $this->accessBase($token);
+        return $this->showApiAction($tokenId);
+    }
 
-    public function showAction($tokenId = 1)
+    private function showBase($tokenId)
     {
     // jeżeli nie podano parametru, zostanie zwrócona lista plików publicznych
         $entityManager = $this->getDoctrine()->getManager();
         $files = $entityManager->getRepository('AdrjFilesBundle:FilesList')->findByTokenId($tokenId);
-
+        return $files;
+    }
+    
+    public function showAction($tokenId = 1)
+    {
         return $this->render('AdrjFilesBundle:Files:show.html.twig', array(
-            'files' => $files));
+            'files' => $this->showBase($tokenId)));
+    }
+    
+    public function showApiAction($tokenId = 1)
+    {
+        $i=0;
+        $filesArray = array();
+        $files = $this->showBase($tokenId);
+        foreach ($files as $file)
+        {
+            $filesArray[$i] = $file->jsonSerializeFile();
+            $i++;
+        }
+        return new JsonResponse($filesArray);
     }
 
     public function getAction($fileName)
@@ -68,7 +98,7 @@ class FilesController extends Controller
 
     private function downloadFile($file) {
         //TODO: Poprawic pobieranie plikow
-        $path = $this->get('kernel')->getRootDir().'/' . $file;
+        $path = $this->get('kernel')->getRootDir().'/securedFiles/' . $file;
 
         if(true) {
 

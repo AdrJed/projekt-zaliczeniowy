@@ -7,6 +7,7 @@
 {% if is_granted('ROLE_ADMIN') %}
 <a href="{{ path('blog_add_post') }}">Dodaj wpis</a>
 {% endif %}
+{# dump(posts) #}
 <div class="list posts">
     <ul>
     {% for post in posts %}
@@ -16,6 +17,7 @@
         <p class="description">{{ post.description }}</p>
         <p class="createTime">utworzono: {{ post.createTime|date('Y-m-d H:i:s') }}</p>
         {% if post.editTime %}
+        {# Wewnętrzny błąd twiga przy parsowaniu #}
         {#<p class="editTime">edytowano: {{ post.editTime|date('Y-m-d H:i:s') }}</p>#}
         {% endif %}
         {% if is_granted('ROLE_ADMIN') %}

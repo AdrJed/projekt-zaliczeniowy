@@ -23,3 +23,8 @@ adrj_works:
 adrj_blog:
     resource: "@AdrjBlogBundle/Resources/config/routing.yml"
     prefix: /blog
+    
+adrj_api:
+    defaults: { _controller: AdrjBundle:Default:apiInfo }
+    path: /api
+    

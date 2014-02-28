@@ -248,4 +248,31 @@ class BlogPosts
     {
         return $this->tag;
     }
+    
+    public function jsonSerializePost()
+    {
+        return array (
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            //'content' => $this->content,
+            //'unused' => $this->unused,
+            'createTime' => $this->createTime,
+            'editTime' => $this->editTime,
+            //'active' => $this->active,
+            'tag' => $this->tag
+        );
+    }
+    
+    public function jsonSerializePostContent()
+    {
+        return array (
+            'id' => $this->id,
+            'title' => $this->title,
+            'content' => $this->content,
+            'createTime' => $this->createTime,
+            'editTime' => $this->editTime,
+            'tag' => $this->tag
+        );
+    }
 }

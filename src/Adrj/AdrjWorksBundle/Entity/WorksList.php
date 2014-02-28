@@ -136,4 +136,14 @@ class WorksList
     {
         return $this->thumb;
     }
+    
+    public function jsonSerializeWork()
+    {
+        return array(
+            'id' => $this->id,
+            'name' => $this->name,
+            'shortDesc' => $this->shortDesc,
+            'thumb' => $this->thumb
+        );
+    }
 }

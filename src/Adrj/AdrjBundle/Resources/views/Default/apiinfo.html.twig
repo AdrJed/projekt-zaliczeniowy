@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Pomoc API{% endblock %}
+
+{% block body %}
+<div id="api_help" >
+    <h1>Pomoc API</h1>
+    <p>Tutaj znajdują się dostępe ścieżki umożliwiające zwrócenie wyniku
+        zapytania w formacie json.
+    </p>
+    
+    <ul>
+        <li><b>/files/api</b> - lista wyszystkich wpisów bloga,</li>
+        <li><b>/files/api/show/{id}</b> - zawartość wpisu o podanym id,</li>
+        </br>
+        <li><b>/works/api</b> - lista kategorii prac</li>
+        <li><b>/works/api/c/{category}</b> - lista prac z danej kategorii,</li>
+        <li><b>/works/api/s/{category}/{id}</b> - widok pracy o podanej kategorii
+            i id,</li>
+        </br>
+        <li><b>/files/api/a/{token}</b> - lista plików powiązanych z tokenem</li>
+        <li><b>/files/api/show</b> - lista publicznych plików</li>
+    </ul>
+</div>
+{% endblock %}

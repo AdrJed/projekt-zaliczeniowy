@@ -4,6 +4,8 @@ namespace Adrj\AdrjWorksBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 class WorksController extends Controller
 {
     public function worksAction()
@@ -11,6 +13,11 @@ class WorksController extends Controller
     // Akcja generująca linki do poszczególnych kategorii
         
         return $this->render('AdrjWorksBundle:Works:works.html.twig');
+    }
+    
+    public function worksApiAction()
+    {      
+        return new JsonResponse("worksApi - lista kategorii");
     }
 
     private function addCategoryName($worksList)
@@ -25,13 +32,19 @@ class WorksController extends Controller
         }
         return $worksList;
     }
+    
+    private function listBase($category)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $worksList = $entityManager->getRepository('AdrjWorksBundle:WorksList');
+        return $worksList;
+    }
 
     public function listAction($category)
     {
     // Akcja listująca prace z danej kategorii (graphics, programs, websites, all)
         $categoryName = NULL;
-        $entityManager = $this->getDoctrine()->getManager();
-        $worksList = $entityManager->getRepository('AdrjWorksBundle:WorksList');
+        $worksList = $this->listBase($category);
 
         if ($category == 'all')
         {
@@ -53,6 +66,23 @@ class WorksController extends Controller
             'categoryName' => $categoryName
             ));
     }
+    
+    public function listApiAction($category)
+    {
+        $i=0;
+        $worksArray = array();
+        $worksList = $this->listBase($category);
+        
+        if ($category == 'all'){ $worksList = $worksList->findAll();}
+        else{ $worksList = $worksList->getWorksByCategory($category);}
+        
+        foreach ($worksList as $work)
+        {
+            $worksArray[$i] = $work->jsonSerializeWork();
+            $i++;
+        }
+        return new JsonResponse($worksArray);
+    }
 
     public function showAction($category,$id_name)
     {
@@ -71,6 +101,11 @@ class WorksController extends Controller
         }
         
         //return $this->render('AdrjWorksBundle:Works:show.html.twig');
+    }
+    
+    public function showApiAction($category,$id_name)
+    {
+        return new JsonResponse('nie bangla');  
     }
 
     public function programAction($id_name)

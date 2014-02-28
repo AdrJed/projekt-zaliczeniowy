@@ -5,10 +5,18 @@
 files_page:
     pattern: /
     defaults: { _controller: AdrjFilesBundle:Files:access }
+    
+files_api_page:
+    pattern: /api/a/{token}
+    defaults: { _controller: AdrjFilesBundle:Files:accessApi }
 
 files_show_list:
     pattern: /show
     defaults: { _controller: AdrjFilesBundle:Files:show }
+    
+files_api_show_list:
+    pattern: /api/show
+    defaults: { _controller: AdrjFilesBundle:Files:showApi }
 
 files_get_file:
     pattern: /get/{fileName}

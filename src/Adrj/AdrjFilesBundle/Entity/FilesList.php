@@ -108,4 +108,13 @@ class FilesList
     {
         return $this->extension;
     }
+    
+    public function jsonSerializeFile()
+    {
+        return array (
+            'id' => $this->id,
+            'name' => $this->name,
+            'extension' => $this->extension
+        );
+    }
 }
