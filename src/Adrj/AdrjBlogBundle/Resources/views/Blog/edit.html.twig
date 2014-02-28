@@ -1,5 +1,5 @@
 {% extends "AdrjBlogBundle::blogBase.html.twig" %}
-{% block title %}Edytuj wpis{% endblock %}
+{% block title %}Blog - edytuj wpis{% endblock %}
 
 {% block blogContainer %}
 {{ parent() }}
@@ -12,6 +12,6 @@
         <p>{{ notfound }}</p>
     {% endif %}
     </div> 
-<a href="{{ path('blog_page') }}">Powrot</a>    
+    <a href="{{ path('blog_page') }}">Powrót</a>    
 </div>
 {% endblock %}

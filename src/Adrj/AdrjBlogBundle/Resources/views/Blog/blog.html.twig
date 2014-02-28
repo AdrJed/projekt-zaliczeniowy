@@ -1,9 +1,9 @@
 {% extends "AdrjBlogBundle::blogBase.html.twig" %}
-{% block title %}Blog{% endblock %}
+{% block title %}AJ Blog{% endblock %}
 
 {% block blogContainer %}
 {{ parent() }}
-<h1>Welcome to the Blog:</h1>
+<h1>Witaj na blogu</h1>
 {% if is_granted('ROLE_ADMIN') %}
 <a href="{{ path('blog_add_post') }}">Dodaj wpis</a>
 {% endif %}

@@ -1,4 +1,23 @@
-{% extends "::base.html.twig" %}
-
-{% block footer %}
+{% block header %}
+    <a href="/"><img class="logo" src="{{ asset('images/logo_AJ.png') }}" alt="logo_AJ" /></a>
+    <h2><a href="/">ADRIAN JĘDRZEJAK</a></h2>
+    <div id="logging">
+        {% if app.user %}
+        <p>&#123;{{ app.user.username }}&#125; <a href="{{ path('logout') }}">WYLOGUJ</a></p>
+        {% else %}
+        <p><a href="{{ path('login') }}">ZALOGUJ</a></p>
+        {% endif %}
+    </div>
+    <ul class="menu">
+        <li><a href="{{ path('adrj_homepage') }}">GŁÓWNA</a>
+        </li>
+        <li><a href="{{ path('blog_page') }}">BLOG</a>
+        </li>
+        <li><a href="{{ path('works_page') }}">PRACE</a>
+        </li>
+        <li><a href="{{ path('files_page') }}">PLIKI</a>
+        </li>
+        <li><a href="{{ path('adrj_api') }}">API</a>
+        </li>
+    </ul>
 {% endblock %}

@@ -9,33 +9,11 @@
     {#<link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/normalize.css') }}" />#}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/adrj/css/main.css') }}" />
     {% endblock %}
-    <title>{% block title %}Aj corner{% endblock %}</title>
+    <title>{% block title %}AJ homepage{% endblock %}</title>
 </head>
 <body>
     <header>
-    {% block header %}
-        <a href="/"><img class="logo" src="{{ asset('images/logo_AJ.png') }}" alt="logo_AJ" /></a>
-        <h2>ADRIAN JĘDRZEJAK</h2>
-        <div id="logging">
-            {% if app.user %}
-            <p>&#123;{{ app.user.username }}&#125; <a href="{{ path('logout') }}">WYLOGUJ</a></p>
-            {% else %}
-            <p><a href="{{ path('login') }}">ZALOGUJ</a></p>
-            {% endif %}
-        </div>
-        <ul class="menu">
-            <li><a href="{{ path('adrj_homepage') }}">GŁÓWNA</a>
-            </li>
-            <li><a href="{{ path('blog_page') }}">BLOG</a>
-            </li>
-            <li><a href="{{ path('works_page') }}">PRACE</a>
-            </li>
-            <li><a href="{{ path('files_page') }}">PLIKI</a>
-            </li>
-            <li><a href="{{ path('adrj_api') }}">API</a>
-            </li>
-        </ul>
-    {% endblock %}
+    {% include 'header.html.twig' %}
     </header>
     <div id="container">
         <div class="bc top-left"></div><div class="bc top-right"></div>
@@ -47,9 +25,7 @@
     {% endblock %}
     </div>
     <footer>
-    {% block footer %}
-        <p> Tutaj znajduje się stopka strony </p>
-    {% endblock %}
+    {% include 'footer.html.twig' %}
     </footer>
     {% block javascripts %}
     {% endblock %}

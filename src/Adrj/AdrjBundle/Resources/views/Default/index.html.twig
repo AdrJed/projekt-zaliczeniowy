@@ -1,20 +1,91 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-<div id="home" >
-    <p>So..., hi! My name is Adrian. I born in Poland, and I'm living here at present. My attention focuses
-    on computers in many ways of using them: programming, networking or graphics. Last kind of usage it
-    is the easiest because, I think, I have some gift from somewhere :) that's of course demands lots of work. But actually I'm hard working on
-    improving my programming skill. It's very enjoyable when I am absorbed by this but it is big opportunity
-    to start coding. I always thinking about my low skills at the beginning, but I'm fighting. That was my short
-    presentation. For more info I want to invite you <a href="">here</a>. Thanks! 
-    </p>
-    <sup>PS: Sorry if my language is not accurate enough :/. My knowledge about it I'm gathering most from
-     IT publications. Let me know if something wrong at <u>adrian.jedrzejak@ajsite.pl</u> </sup>
-    <p>
-    Welcome to the personal site template! To get started, click any of the 
-    menu items for additional setup instructions.
-    </p>
+<div id="home" > 
+    <h2>Projekt zaliczeniowy - kurs PHP</h2>
+    <h3>Adrian Jędrzejak - I r. IS WFAIiS UMK</h3>
+
+    <h3> Tematyka </h3>  
+        <ul>
+        <p>Strona o sobie, swojej aktywności, projektach itp. 
+        Główne składowe to system prostego bloga i lista moich ukończonych lub 
+        będacych w trakcie rozwoju najróżniejszych prac którymi chcę podzielić się
+        ze światem.</p>
+        <p>Inna funkcjonalnością będzie system dostępu do plików dla użytkowników,
+        którym chcę bezpiecznie przez swój serwer udostępnić ważne dane.
+        Użytkownik powinien potwierdzić dostęp do określonej listy plików 
+        kluczem (tokenem).</p>
+        </ul>
     
+    <h3>Szablon strony</h3>
+    <ul>
+    <h3>STRONA GŁÓWNA</h3>
+
+        <li>nagłówek z prostym menu i podstawowymi informacjami czy linkami,</li>
+        <li>kilka słów o sobie,</li>
+        <li>grafiki z głównymi kategoriami menu (blog, prace, pliki),</li>
+        <li>lista ostatnich aktywności (wpis na blogu, dodana praca, itp.)</li>
+
+        <h3>PRACE</h3>
+    
+        <li>widok wyboru kategorii (grafika, program, strona internetowa itp.),</li>
+        <li>widok listy elementów dla danej kategorii:
+        <ul>
+            <li>tytuł,</li>
+            <li>krótki opis,</li>
+            <li>data dodania, edycji,</li>
+            <li>grafika/logo/miniatura,</li>
+            <li>link do szczegółów</li>
+        </ul>
+        </li>
+        <li>widok szczegółów wybranego elementu:
+        <ul>
+            <li>tytuł,</li>
+            <li>długi opis,</li>
+            <li>kilka przykładowych grafik</li>
+        </ul>
+        </li>
+
+        <h3>BLOG</h3>
+    
+        <li>widok listy wpisów:</li>
+        <ul>
+            <li>tytuł,</li>
+            <li>krótki opis/wstępna treść,</li>
+            <li>data dodania, edycji,</li>
+            <li>link przejścia do wpisu</li>
+        </ul>
+        <li>widok wybranego wpisu:
+        <ul>
+            <li>tytuł,</li> 
+            <li>pełna treść,</li>
+            <li>data dodania, edycji,</li>
+        </ul>
+        </li>
+        
+    <h3>UDOSTĘPNIANIE PLIKÓW</h3>   
+    
+        <li>widok główny:
+            <ul>
+                <li>pole identyfikatora dostępu dla konkretnej grupy plików,</li>
+                <li>przejście do plików ogólnodostępnych</li>
+            </ul>
+        </li>
+        <li>widok listy plików:
+            <ul>
+                <li>nazwa pliku,</li>
+                <li>rozmiar,</li>
+                <li>typ pliku,</li>
+                <li>przycisk pobierania pliku</li>
+            </ul>
+        </li>
+        
+        <h3>API</h3>
+        
+        <li>lista wpisów bloga, zawartość posta,</li>
+        <li>lista kategorii, lista prac,</li>
+        <li>lista dostępnych plików</li>
+        
+    </ul>
 </div>
 {% endblock %}
