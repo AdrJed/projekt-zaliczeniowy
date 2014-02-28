@@ -15,10 +15,10 @@ class WorksController extends Controller
         return $this->render('AdrjWorksBundle:Works:works.html.twig');
     }
     
-    public function worksApiAction()
+    /*public function worksApiAction()
     {      
         return new JsonResponse("worksApi - lista kategorii");
-    }
+    }*/
 
     private function addCategoryName($worksList)
     {
@@ -111,22 +111,31 @@ class WorksController extends Controller
     public function programAction($id_name)
     {
     // Akcja zwracająca widok dla szczegółów programu       
-
-        return $this->render('AdrjWorksBundle:Works:show.program.html.twig');
+        $programWork;
+        
+        return $this->render('AdrjWorksBundle:Works:show.program.html.twig', array(
+            'work' => $programWork
+        ));
     }
 
     public function graphicsAction($id_name)
     {
     // Akcja zwracająca widok dla szczegółów grafiki
-
-        return $this->render('AdrjWorksBundle:Works:show.graphics.html.twig');    
+        $graphicWork;
+        
+        return $this->render('AdrjWorksBundle:Works:show.graphics.html.twig', array(
+            'work' => $graphicWork
+        ));    
     }
 
     public function websiteAction($id_name)
     {
     // Akcja zwracająca widok dla szczegółów strony internetowej
-
-        return $this->render('AdrjWorksBundle:Works:show.website.html.twig');
+        $webWork;
+        
+        return $this->render('AdrjWorksBundle:Works:show.website.html.twig', array(
+            'work' => $webWork
+        ));
     }
 
 }

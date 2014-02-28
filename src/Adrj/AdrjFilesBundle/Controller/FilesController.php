@@ -5,11 +5,13 @@ namespace Adrj\AdrjFilesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Adrj\AdrjFilesBundle\Entity\FilesList;
 use Adrj\AdrjFilesBundle\Entity\FilesTokens;
 use Adrj\AdrjFilesBundle\Form\FilesTokenForm;
+use Adrj\AdrjFilesBundle\Form\AddFileForm;
 
 class FilesController extends Controller
 {
@@ -98,11 +100,10 @@ class FilesController extends Controller
 
     private function downloadFile($file) {
         //TODO: Poprawic pobieranie plikow
-        $path = $this->get('kernel')->getRootDir().'/securedFiles/' . $file;
+        $path = $this->get('kernel')->getRootDir().'/../securedFiles/' . $file . '.pdf';
+                    $response = new Response();
 
-        if(true) {
-
-            $response = new Response();
+        if(0) {        
             $response->headers->set('Content-Description', 'File Transfer');
             $response->headers->set('Content-Type', 'application/octet-stream');
             $response->headers->set('Content-Disposition', 'attachment; filename='.basename($file));
@@ -117,15 +118,51 @@ class FilesController extends Controller
             $response->send();
             return $response;
         }
+        else
+        {
+            $d = $response->headers->makeDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            $path);
+            $response->headers->set('Content-Disposition', $d);
+            $response->send();
+            return $response;
+        }
 
     }
 
-    public function addAction()
+    public function addAction(Request $request)
     {
-        $tokenForm = $this->createForm(new FilesTokenForm());
-
-        return $this->render('AdrjFilesBundle:Files:access.html.twig',array(
-            'tokenForm' => $tokenForm->createView(),
-            'message' => 'Tu bedzie mozna dodawac swoje pliki' ));
+        $addFileForm = $this->createForm(new AddFileForm());
+        $message = '';
+        
+        if ($request->getMethod() == 'POST')
+        {
+            $addFileForm->handleRequest($request);
+            $dir = $this->get('kernel')->getRootDir().'/../securedFiles/';
+            
+            if ($addFileForm->isValid())
+            {
+                $content = $addFileForm->getData();
+                $fileName = $content['name'].'.'.$content['extension'];
+                
+                $content['attachment']->move($dir, $fileName);
+                
+                $filesList = new FilesList();
+                $filesList->setName($content['name']);
+                $filesList->setExtension($content['extension']);
+                $filesList->setTokenId(1);
+                
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($filesList);
+                $entityManager->flush();
+                
+                $message = 'Przesłano plik '.$fileName;
+            }    
+            
+        }
+        
+        return $this->render('AdrjFilesBundle:Files:add.html.twig',array(
+            'addFileForm' => $addFileForm->createView(),
+            'message' => $message ));
     }
 }

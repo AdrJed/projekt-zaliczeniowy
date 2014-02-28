@@ -1,14 +1,14 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AdrjBundle:Works:works_page{% endblock %}
+{% block title %}AJ works{% endblock %}
 
 {% block body %}
 <div id="works">
-    <h1>Welcome to the Works:works page</h1>
+    <h1>Moje prace</h1>
     <div class="overall">
-        <p>Strona startowa dzialu prac</p>
+        <p>Strona startowa działu prac.</p>
         <div class="category">
-            <p>Dostepne kategorie prac</p>
+            <p>Dostepne kategorie prac:</p>
             <ul>
                 <li><a href="{{ path('works_list', { 'category':'graphics' }) }}">Grafika</a></li>
                 <li><a href="{{ path('works_list', { 'category':'programs' }) }}">Programy</a></li>

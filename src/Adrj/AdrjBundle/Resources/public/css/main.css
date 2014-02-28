@@ -95,8 +95,8 @@ textarea {
 }
 @font-face {
   font-family: 'Open Sans';
-  src: url('OpenSans-Semibold-webfont.eot');
-  src: url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('OpenSans-Semibold-webfont.woff') format('woff'), url('OpenSans-Semibold-webfont.ttf') format('truetype'), url('OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+  src: url('../../../fonts/OpenSans-Semibold-webfont.eot');
+  src: url('../../../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../fonts/OpenSans-Semibold-webfont.woff') format('woff'), url('../../../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'), url('../../../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
   font-weight: 600;
   font-style: normal;
 }
@@ -143,6 +143,10 @@ header h2 {
   margin: 5px 0 0 0;
   padding: 0 0 0 10px;
 }
+header h2 a {
+  color: black;
+  text-decoration: none;
+}
 header img.logo {
   display: block;
   float: left;
@@ -153,7 +157,8 @@ header img.logo {
 div#container {
   float: left;
   margin: 5px auto;
-  min-width: 100%;
+  padding: 5px 20px;
+  min-width: 95%;
   min-height: 480px;
   position: relative;
 }
@@ -211,8 +216,13 @@ footer {
   clear: both;
   margin: 0 auto;
   min-width: 100%;
-  float: left;
+  float: left;  
+  padding: 0 20px;
 }
+footer p {
+    text-align: center;
+}
+
 footer h5 {
   text-align: right;
 }

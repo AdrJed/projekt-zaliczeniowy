@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AJ add files{% endblock %}
+
+{% block body %}
+<div id="files">
+<h1>Dodaj plik publiczny</h1>
+    {% if message is defined %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+    <p>Wprowadź dane umożliwiające przesłanie pliku</p>
+    <div class="access-form">
+        {{ form(addFileForm) }}
+    </div>
+</div>
+{% endblock %}

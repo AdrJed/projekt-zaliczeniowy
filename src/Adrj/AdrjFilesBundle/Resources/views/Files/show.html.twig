@@ -1,12 +1,12 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AdrjBundle:Files:show_list{% endblock %}
+{% block title %}AJ files list{% endblock %}
 
 {% block body %}
 <div id="files">
-<h1>Welcome to the File list:show page</h1>
+<h1>Lista dostępnych plików</h1>
     <div class="list">
-    <p> Tutaj znajduje sie lista dostepnych plikow</p>
+    <p> Tutaj znajduje się lista dostępnych plików:</p>
         <ul> 
         {% for file in files %}
         <li><div class="bc top-left"></div>

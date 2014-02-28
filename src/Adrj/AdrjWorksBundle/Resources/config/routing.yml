@@ -6,9 +6,9 @@ works_page:
     pattern: /
     defaults: { _controller: AdrjWorksBundle:Works:works }
     
-works_api_page:
-    pattern: /api
-    defaults: { _controller: AdrjWorksBundle:Works:worksApi }
+#works_api_page:
+#    pattern: /api
+#    defaults: { _controller: AdrjWorksBundle:Works:worksApi }
 
 works_list:
     pattern: /{category}
